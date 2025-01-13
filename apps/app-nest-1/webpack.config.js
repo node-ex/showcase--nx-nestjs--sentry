@@ -1,4 +1,5 @@
 const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
+const { sentryWebpackPlugin } = require('@sentry/webpack-plugin');
 const { join } = require('path');
 
 module.exports = {
@@ -27,5 +28,11 @@ module.exports = {
       skipTypeChecking: true, // Default: false
       sourceMap: true, // Default: false
     }),
+    sentryWebpackPlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: 'personal-rhl',
+      project: 'testing-ground--nestjs',
+    }),
   ],
+  devtool: 'source-map',
 };
