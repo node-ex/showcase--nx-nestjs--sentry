@@ -1,4 +1,13 @@
-# template--nx-nestjs--basic
+# showcase--nx-nestjs--sentry
+
+## Showcase
+
+1. Setup Sentry account and project for this showcase
+2. Run `pnpm install`
+3. Copy `.env.template` as `.env` and add/change values if needed
+4. Run the app using `pnpm exec nx run app-nest-1:serve`
+5. Enable "REST Client" extension in VSCode and run the requests in `./api/requests.http` file
+6. Inspect the Sentry Issues dashboard
 
 ## Local development
 
