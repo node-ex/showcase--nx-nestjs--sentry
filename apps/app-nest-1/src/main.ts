@@ -1,17 +1,19 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
+/*
+ * Needed for setting up Sentry.
+ * Should have the same version as `@nestjs/config` package's dependency.
  */
+import 'dotenv/config';
+/* Must be the imported before other imports */
+import './app/sentry.setup';
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
-
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   await ConfigModule.envVariablesLoaded;
-  // console.log(process.env['GREETING']);
+  // console.log("process.env['GREETING']", process.env['GREETING']);
 
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
